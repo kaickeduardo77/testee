@@ -1,0 +1,488 @@
+:root {
+
+  --primary: #6c4ab6;
+  --primary-dark: #4d2f8c;
+
+  --secondary: #ece3ff;
+
+  --accent: #f59e0b;
+
+  --bg:
+    linear-gradient(
+      to bottom,
+      #f8f8fc,
+      #efeff8
+    );
+
+  --white: #ffffff;
+
+  --text: #1f1f1f;
+
+  --text-light: #6b7280;
+
+  --success: #21c75e;
+
+  --danger: #b42929;
+
+  --shadow-sm:
+    0 4px 12px rgba(0,0,0,0.04);
+
+  --shadow-md:
+    0 10px 25px rgba(0,0,0,0.08);
+
+  --shadow-lg:
+    0 20px 40px rgba(108, 74, 182, 0.15);
+
+  --radius-sm: 12px;
+
+  --radius-md: 18px;
+
+  --radius-lg: 26px;
+
+  --transition: 0.3s ease;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: Inter, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  min-height: 100vh;
+
+  line-height: 1.5;
+}
+
+.header {
+
+  width: 100%;
+
+  height: 90px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 70px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+
+  box-shadow:
+    0 2px 15px rgba(0,0,0,0.05);
+}
+
+.header h1 {
+
+  font-size: 2.3rem;
+
+  font-weight: 800;
+
+  color: var(--primary);
+
+  letter-spacing: -1px;
+}
+
+nav {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+nav button {
+
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  height: 50px;
+
+  padding: 0 24px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow-sm);
+}
+
+nav button:hover {
+
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+}
+
+#app {
+
+  max-width: 1450px;
+
+  margin: auto;
+
+  padding: 25px 60px 50px;
+}
+
+.products-page {
+
+  margin-top: 0;
+}
+
+.products-page h2 {
+
+  font-size: 2.8rem;
+
+  font-weight: 700;
+
+  margin-bottom: 35px;
+
+  color: var(--primary-dark);
+
+  line-height: 1.1;
+}
+
+.products-page h1 {
+
+  color: var(--primary-dark);
+}
+
+.products-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 32px;
+}
+
+.product-card {
+
+  background: white;
+
+  border-radius: var(--radius-md);
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition);
+
+  display: flex;
+
+  flex-direction: column;
+
+  position: relative;
+
+  padding: 30px;
+}
+
+.product-card h3{
+  color: #4d2f8c;;
+}
+
+.product-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.product-image {
+
+  width: 100%;
+
+  height: 260px;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #f3f3f3;
+
+  transition: 0.3s;
+
+  padding: 15px;
+}
+
+.product-card:hover .product-image {
+
+  transform: scale(1.03);
+}
+
+.product-info {
+
+  padding: 24px;
+}
+
+.produto-titulo {
+
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+  margin-bottom: 14px;
+
+  color: var(--text);
+
+  line-height: 1.4;
+}
+
+.produto-preco {
+
+  font-size: 1.9rem;
+
+  font-weight: 800;
+
+  color: var(--primary);
+
+  margin-bottom: 12px;
+
+  margin-top: 5px;
+}
+
+.produto-estoque {
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: var(--text-light);
+
+  margin-bottom: 22px;
+}
+
+.btn-add-cart {
+
+  width: 100%;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  margin-top: 15px;
+}
+
+.btn-add-cart:hover {
+
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+
+  #app {
+
+    padding: 15px 25px 40px;
+  }
+
+  .products-page h2 {
+
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .header {
+
+    height: auto;
+
+    padding: 20px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  #app {
+
+    padding: 10px 20px 40px;
+  }
+
+  .products-page h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 24px;
+  }
+
+  .products-grid {
+
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.pedidos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pedidos-container h1{
+  color: var(--primary-dark);
+}
+.pedidos-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 20px;
+}
+
+/* Card individual de cada pedido no histórico */
+.pedido-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(108, 74, 182, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pedido-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary);
+}
+
+/* Informações da Esquerda (ID e Data) */
+.pedido-info-main h5 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.pedido-data {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Informações da Direita (Status e Valor) */
+.pedido-status-valor {
+    text-align: right;
+}
+
+/* Badge de Status baseada no ENUM do banco */
+.status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.status-aberto {
+    background-color: #fff7ed;
+    color: var(--accent);
+    border: 1px solid #fef3c7;
+}
+
+.status-finalizado {
+    background-color: #f0fdf4;
+    color: var(--success);
+    border: 1px solid #dcfce7;
+}
+
+.status-pendente {
+    background-color: #fef2f2;
+    color: var(--danger);
+    border: 1px solid #fee2e2;
+}
+
+/* Valor total do pedido */
+.pedido-valor-final {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+}
+
+/* --- Estilização do Resumo do Pedido (Página de Checkout) --- */
+
+.resumo-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--secondary);
+}
+
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.resumo-total {
+    border-top: 2px dashed var(--secondary);
+    margin-top: 20px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+
+.btn-finalizar-compra {
+    background: var(--success);
+    margin-top: 25px;
+}
+
+.btn-finalizar-compra:hover {
+    background: #19a34b; 
+}
